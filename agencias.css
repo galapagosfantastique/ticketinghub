@@ -4,8 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Inconsolata:wght@500;600&display=swap');
 
-/* Caja centrada y ancho cómodo (el login es pequeño; el calendario tras iniciar sesión necesita ancho) */
-#checkout { max-width: 720px; margin: 0 auto; }
+/* Ancho cómodo y CENTRADO horizontal (login pequeño; el calendario tras login necesita ancho) */
+#checkout { max-width: 720px; margin: 0 auto !important; }
+#checkout-container,
+#checkout-wrapper {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+}
 
 /* Bordes rectos como el resto del sitio — incluye el RECUADRO/tarjeta (sin border-radius) */
 #checkout,
@@ -24,7 +30,21 @@
 #checkout label,
 #checkout .form-control { font-family: 'Inter', system-ui, sans-serif !important; }
 
-/* Botones: Inconsolata en mayúsculas, SIEMPRE en una sola línea (evita que se corte) */
+/* Tarjeta UNIFICADA en blanco: encabezado y pie del mismo blanco que el cuerpo
+   (así el botón deja de verse "suelto" sobre el fondo oscuro del portal) */
+#checkout-header { background-color: #FFFFFF !important; }
+#checkout .accent-background { background-color: #FFFFFF !important; color: #1D1D1B !important; }
+
+/* Aire para que el botón no quede pegado al borde del recuadro */
+#checkout-footer { padding: 12px 16px !important; }
+
+/* Inputs con borde de marca */
+#checkout .form-control { border: 1px solid #1D1D1B !important; }
+
+/* Iconos y acentos -> azul de marca */
+#checkout .accent-color { color: #1470AF !important; }
+
+/* Botón "Iniciar sesión": OSCURO sobre el pie blanco (contraste claro), sin cortarse */
 #checkout-btn-next,
 #checkout-btn-prev {
   font-family: 'Inconsolata', monospace !important;
@@ -33,17 +53,10 @@
   white-space: nowrap !important;
   padding: 12px 22px !important;
 }
-
-/* Inputs con borde de marca */
-#checkout .form-control { border: 1px solid #1D1D1B !important; }
-
-/* Iconos y acentos -> azul de marca */
-#checkout .accent-color { color: #1470AF !important; }
-
-/* Barra de acción y botón "Iniciar sesión" -> OSCUROS (como al inicio)
-   con BORDE CLARO para que el botón resalte sobre el fondo oscuro */
-#checkout .accent-background { background-color: #1D1D1B !important; color: #FFFFFF !important; }
+#checkout #checkout-btn-next {
+  background-color: #1D1D1B !important;
+  border: 1px solid #1D1D1B !important;
+}
 #checkout #checkout-btn-next,
 #checkout #checkout-btn-next span { color: #FFFFFF !important; }
-#checkout #checkout-btn-next { border: 1px solid #FFFFFF !important; }
 #checkout #checkout-btn-next:hover { filter: brightness(1.25); }
