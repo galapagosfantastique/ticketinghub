@@ -1,0 +1,38 @@
+/* Portal de agencias — Galápagos Fantastique
+   Estilo de marca para el widget del portal de reseller (embed legacy checkout.js).
+   Se enlaza en TicketingHub: Widgets -> Channels -> Web Integrations -> widget -> Settings -> Custom CSS URL */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Inconsolata:wght@500;600&display=swap');
+
+/* Caja centrada y ancho cómodo (el login es pequeño; el calendario tras iniciar sesión necesita ancho) */
+#checkout { max-width: 720px; margin: 0 auto; }
+
+/* Bordes rectos como el resto del sitio */
+#checkout,
+#checkout-wrapper,
+#checkout .form-control,
+#checkout button { border-radius: 0 !important; }
+
+/* Tipografías de marca */
+#checkout,
+#checkout .title,
+#checkout p,
+#checkout label,
+#checkout .form-control { font-family: 'Inter', system-ui, sans-serif !important; }
+
+#checkout-btn-next,
+#checkout-btn-prev {
+  font-family: 'Inconsolata', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: .02em !important;
+}
+
+/* Inputs con borde de marca */
+#checkout .form-control { border: 1px solid #1D1D1B !important; }
+
+/* Iconos y acentos -> azul de marca */
+#checkout .accent-color { color: #1470AF !important; }
+
+/* Botón "Iniciar sesión" y barra de accion -> negro de marca */
+#checkout .accent-background { background-color: #1D1D1B !important; }
+#checkout #checkout-btn-next:hover { filter: brightness(1.25); }
