@@ -30,13 +30,20 @@
 #checkout label,
 #checkout .form-control { font-family: 'Inter', system-ui, sans-serif !important; }
 
-/* Tarjeta UNIFICADA en blanco: encabezado y pie del mismo blanco que el cuerpo
-   (así el botón deja de verse "suelto" sobre el fondo oscuro del portal) */
+/* Tarjeta UNIFICADA en blanco: encabezado y pie del mismo blanco que el cuerpo */
 #checkout-header { background-color: #FFFFFF !important; }
 #checkout .accent-background { background-color: #FFFFFF !important; color: #1D1D1B !important; }
 
-/* Aire para que el botón no quede pegado al borde del recuadro */
-#checkout-footer { padding: 12px 16px !important; }
+/* Pie: el botón CONTENIDO dentro de la tarjeta (sin desbordarse), alineado a la derecha
+   y con aire respecto al borde. Neutraliza los márgenes negativos por defecto. */
+#checkout-footer { padding: 12px 16px !important; overflow: hidden !important; }
+#checkout-footer .buttons {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 /* Inputs con borde de marca */
 #checkout .form-control { border: 1px solid #1D1D1B !important; }
@@ -44,7 +51,7 @@
 /* Iconos y acentos -> azul de marca */
 #checkout .accent-color { color: #1470AF !important; }
 
-/* Botón "Iniciar sesión": OSCURO sobre el pie blanco (contraste claro), sin cortarse */
+/* Botón "Iniciar sesión": OSCURO sobre el pie blanco, contenido y sin cortarse */
 #checkout-btn-next,
 #checkout-btn-prev {
   font-family: 'Inconsolata', monospace !important;
@@ -52,6 +59,8 @@
   letter-spacing: 0 !important;
   white-space: nowrap !important;
   padding: 12px 22px !important;
+  float: none !important;
+  margin: 0 !important;
 }
 #checkout #checkout-btn-next {
   background-color: #1D1D1B !important;
