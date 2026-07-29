@@ -44,3 +44,19 @@
 #checkout #checkout-btn-next span { color: #1D1D1B !important; }
 #checkout #checkout-btn-next { border: 1px solid #1D1D1B !important; }
 #checkout #checkout-btn-next:hover { filter: brightness(0.95); }
+
+/* Aire alrededor del botón (que no toque el borde) + botón al mismo ancho
+   que los inputs y centrado */
+#checkout-footer { padding: 0 !important; }
+#checkout-footer .buttons {
+  display: flex !important;
+  gap: 10px !important;
+  padding: 16px !important;
+}
+#checkout-btn-next {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
