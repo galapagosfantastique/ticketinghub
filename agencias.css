@@ -36,9 +36,11 @@
 /* Iconos y acentos -> azul de marca */
 #checkout .accent-color { color: #1470AF !important; }
 
-/* Barra de acción y botón "Iniciar sesión" -> AZUL de marca
-   (visible sobre el fondo oscuro del portal; el negro se fundía con el fondo) */
-#checkout .accent-background { background-color: #1470AF !important; color: #FFFFFF !important; }
+/* Barra de acción y botón "Iniciar sesión" -> INVERTIDO:
+   fondo BLANCO de marca con texto/iconos OSCUROS, borde fino para definirlo
+   sobre el fondo oscuro del portal */
+#checkout .accent-background { background-color: #FFFFFF !important; color: #1D1D1B !important; }
 #checkout #checkout-btn-next,
-#checkout #checkout-btn-next span { color: #FFFFFF !important; }
-#checkout #checkout-btn-next:hover { filter: brightness(1.1); }
+#checkout #checkout-btn-next span { color: #1D1D1B !important; }
+#checkout #checkout-btn-next { border: 1px solid #1D1D1B !important; }
+#checkout #checkout-btn-next:hover { filter: brightness(0.95); }
