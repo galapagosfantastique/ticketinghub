@@ -7,9 +7,13 @@
 /* Caja centrada y ancho cómodo (el login es pequeño; el calendario tras iniciar sesión necesita ancho) */
 #checkout { max-width: 720px; margin: 0 auto; }
 
-/* Bordes rectos como el resto del sitio */
+/* Bordes rectos como el resto del sitio — incluye el RECUADRO/tarjeta (sin border-radius) */
 #checkout,
+#checkout-container,
 #checkout-wrapper,
+#checkout-header,
+#checkout-body,
+#checkout-footer,
 #checkout .form-control,
 #checkout button { border-radius: 0 !important; }
 
@@ -36,27 +40,10 @@
 /* Iconos y acentos -> azul de marca */
 #checkout .accent-color { color: #1470AF !important; }
 
-/* Barra de acción y botón "Iniciar sesión" -> INVERTIDO:
-   fondo BLANCO de marca con texto/iconos OSCUROS, borde fino para definirlo
-   sobre el fondo oscuro del portal */
-#checkout .accent-background { background-color: #FFFFFF !important; color: #1D1D1B !important; }
+/* Barra de acción y botón "Iniciar sesión" -> OSCUROS (como al inicio)
+   con BORDE CLARO para que el botón resalte sobre el fondo oscuro */
+#checkout .accent-background { background-color: #1D1D1B !important; color: #FFFFFF !important; }
 #checkout #checkout-btn-next,
-#checkout #checkout-btn-next span { color: #1D1D1B !important; }
-#checkout #checkout-btn-next { border: 1px solid #1D1D1B !important; }
-#checkout #checkout-btn-next:hover { filter: brightness(0.95); }
-
-/* Aire alrededor del botón (que no toque el borde) + botón al mismo ancho
-   que los inputs y centrado */
-#checkout-footer { padding: 0 !important; }
-#checkout-footer .buttons {
-  display: flex !important;
-  gap: 10px !important;
-  padding: 16px !important;
-}
-#checkout-btn-next {
-  flex: 1 1 auto !important;
-  width: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
+#checkout #checkout-btn-next span { color: #FFFFFF !important; }
+#checkout #checkout-btn-next { border: 1px solid #FFFFFF !important; }
+#checkout #checkout-btn-next:hover { filter: brightness(1.25); }
