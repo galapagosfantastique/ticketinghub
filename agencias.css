@@ -20,11 +20,14 @@
 #checkout label,
 #checkout .form-control { font-family: 'Inter', system-ui, sans-serif !important; }
 
+/* Botones: Inconsolata en mayúsculas, SIEMPRE en una sola línea (evita que se corte) */
 #checkout-btn-next,
 #checkout-btn-prev {
   font-family: 'Inconsolata', monospace !important;
   text-transform: uppercase !important;
-  letter-spacing: .02em !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+  padding: 12px 22px !important;
 }
 
 /* Inputs con borde de marca */
@@ -33,6 +36,9 @@
 /* Iconos y acentos -> azul de marca */
 #checkout .accent-color { color: #1470AF !important; }
 
-/* Botón "Iniciar sesión" y barra de accion -> negro de marca */
-#checkout .accent-background { background-color: #1D1D1B !important; }
-#checkout #checkout-btn-next:hover { filter: brightness(1.25); }
+/* Barra de acción y botón "Iniciar sesión" -> AZUL de marca
+   (visible sobre el fondo oscuro del portal; el negro se fundía con el fondo) */
+#checkout .accent-background { background-color: #1470AF !important; color: #FFFFFF !important; }
+#checkout #checkout-btn-next,
+#checkout #checkout-btn-next span { color: #FFFFFF !important; }
+#checkout #checkout-btn-next:hover { filter: brightness(1.1); }
