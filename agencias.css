@@ -46,14 +46,19 @@
 /* Iconos y acentos -> azul de marca */
 #checkout .accent-color { color: #1470AF !important; }
 
-/* ===== PIE Y BOTÓN — a prueba de desbordes ===== */
-#checkout #checkout-footer { padding: 14px 16px !important; overflow: hidden !important; }
+/* ===== PIE Y BOTÓN — a prueba de desbordes, con padding igual en los 4 lados ===== */
+#checkout #checkout-footer {
+  padding: 16px !important;      /* mismo aire arriba/abajo que a los lados */
+  height: auto !important;       /* evita que una altura fija recorte el padding inferior */
+  min-height: 0 !important;
+  overflow: visible !important;
+}
 
 #checkout #checkout-footer .buttons {
   display: flex !important;
   gap: 8px !important;
   width: 100% !important;
-  margin: 0 !important;
+  margin: 0 !important;          /* neutraliza márgenes negativos por defecto */
   padding: 0 !important;
 }
 
