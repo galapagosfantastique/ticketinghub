@@ -55,19 +55,11 @@
   position: relative !important;
 }
 
-/* El spinner de "cargando" va debajo del botón y añadía altura extra.
-   Lo sacamos del flujo y lo dejamos centrado, pequeño y TRANSPARENTE, para que
-   no ocupe espacio ni tape el botón (el aire inferior queda en 16px, igual que a los lados). */
-#checkout #checkout-footer .spinner {
-  position: absolute !important;
-  inset: auto !important;
-  left: 50% !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  margin: 0 !important;
-  background-color: transparent !important;
-  pointer-events: none !important;
-}
+/* El contenedor `.spinner` (indicador de "cargando") iba debajo del botón:
+   estirado tapaba el botón, y en flujo añadía altura extra. Lo ocultamos por
+   completo — es solo el spinner de carga y el login funciona igual sin él.
+   Así el botón siempre se ve y el aire inferior queda en 16px, igual que a los lados. */
+#checkout #checkout-footer .spinner { display: none !important; }
 
 #checkout #checkout-footer .buttons {
   display: flex !important;
