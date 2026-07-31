@@ -40,6 +40,19 @@
 #checkout #checkout-header { background-color: #FFFFFF !important; }
 #checkout .accent-background { background-color: #FFFFFF !important; color: #1D1D1B !important; }
 
+/* Borde de la tarjeta: UN solo borde gris uniforme alrededor de TODO
+   (header + inputs + pie/botón). Se quitan los bordes internos que lo "cortaban"
+   a la altura del botón. */
+#checkout #checkout-wrapper {
+  border: 1px solid #E0E0E0 !important;
+  overflow: hidden !important;
+}
+#checkout #checkout-container { border: 0 !important; box-shadow: none !important; }
+#checkout #checkout-header,
+#checkout #checkout-body,
+#checkout #checkout-login,
+#checkout #checkout-footer { border: 0 !important; box-shadow: none !important; }
+
 /* Inputs con borde de marca */
 #checkout .form-control { border: 1px solid #1D1D1B !important; }
 
