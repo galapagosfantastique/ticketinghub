@@ -55,11 +55,13 @@
   position: relative !important;
 }
 
-/* El contenedor `.spinner` (indicador de "cargando") iba debajo del botón:
-   estirado tapaba el botón, y en flujo añadía altura extra. Lo ocultamos por
-   completo — es solo el spinner de carga y el login funciona igual sin él.
-   Así el botón siempre se ve y el aire inferior queda en 16px, igual que a los lados. */
-#checkout #checkout-footer .spinner { display: none !important; }
+/* Indicador de "cargando": TicketingHub lo muestra superpuesto al botón (desde
+   distintos puntos del DOM). Lo ocultamos en TODO el widget — spinner, loader y
+   el elemento role="progressbar" — para que no aparezca encima del botón.
+   Es solo feedback de carga; el login funciona igual. */
+#checkout .spinner,
+#checkout .loader,
+#checkout [role="progressbar"] { display: none !important; }
 
 #checkout #checkout-footer .buttons {
   display: flex !important;
