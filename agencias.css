@@ -52,6 +52,19 @@
   height: auto !important;       /* evita que una altura fija recorte el padding inferior */
   min-height: 0 !important;
   overflow: visible !important;
+  position: relative !important;
+}
+
+/* El spinner de "cargando" va debajo del botón y añadía altura extra.
+   Lo sacamos del flujo (se superpone solo al enviar) para que el aire inferior
+   sea EXACTAMENTE el del padding (16px), igual que a los lados. */
+#checkout #checkout-footer .spinner {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin: 0 !important;
 }
 
 #checkout #checkout-footer .buttons {
