@@ -56,15 +56,17 @@
 }
 
 /* El spinner de "cargando" va debajo del botón y añadía altura extra.
-   Lo sacamos del flujo (se superpone solo al enviar) para que el aire inferior
-   sea EXACTAMENTE el del padding (16px), igual que a los lados. */
+   Lo sacamos del flujo y lo dejamos centrado, pequeño y TRANSPARENTE, para que
+   no ocupe espacio ni tape el botón (el aire inferior queda en 16px, igual que a los lados). */
 #checkout #checkout-footer .spinner {
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  inset: auto !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
   margin: 0 !important;
+  background-color: transparent !important;
+  pointer-events: none !important;
 }
 
 #checkout #checkout-footer .buttons {
