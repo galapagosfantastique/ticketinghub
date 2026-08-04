@@ -72,10 +72,9 @@
   border-color: #1470AF !important;
 }
 
-/* Ocultar "Recordar mi usuario en este equipo" en el login:
-   dentro del iframe (contexto de terceros) el navegador bloquea el almacenamiento
-   persistente, así que al marcarla el login FALLA. La ocultamos para evitar el error. */
-#checkout #checkout-login .checkbox { display: none !important; }
+/* NOTA: "Recordar mi usuario" solo persiste si el portal se abre como página de
+   PRIMERA PARTE (enlace directo al widget), no dentro del iframe embebido (las
+   cookies de terceros quedan bloqueadas). Ver guía. La casilla queda visible. */
 
 /* ===== PIE Y BOTÓN — a prueba de desbordes, con padding igual en los 4 lados ===== */
 #checkout #checkout-footer {
