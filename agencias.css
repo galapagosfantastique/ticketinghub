@@ -60,7 +60,7 @@
 #checkout .accent-color { color: #1470AF !important; }
 
 /* Checkbox "Recordar mi usuario": el check salía celeste (default de TicketingHub).
-   Lo pasamos al AZUL de marca. */
+   Lo pasamos al AZUL de marca (por si se muestra en algún contexto). */
 #checkout input[type="checkbox"],
 #checkout .checkbox .checkbox-input input,
 #checkout .checkbox-input input[type="checkbox"] {
@@ -71,6 +71,11 @@
   background-color: #1470AF !important;
   border-color: #1470AF !important;
 }
+
+/* Ocultar "Recordar mi usuario en este equipo" en el login:
+   dentro del iframe (contexto de terceros) el navegador bloquea el almacenamiento
+   persistente, así que al marcarla el login FALLA. La ocultamos para evitar el error. */
+#checkout #checkout-login .checkbox { display: none !important; }
 
 /* ===== PIE Y BOTÓN — a prueba de desbordes, con padding igual en los 4 lados ===== */
 #checkout #checkout-footer {
