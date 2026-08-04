@@ -124,6 +124,33 @@
 #checkout #checkout-footer .buttons #checkout-btn-next span { color: #FFFFFF !important; }
 #checkout #checkout-footer .buttons #checkout-btn-next:hover { filter: brightness(1.25); }
 
-/* Quitar el icono (flecha ">") que va al lado del texto "INICIAR SESIÓN" */
-#checkout #checkout-footer .buttons #checkout-btn-next .icon-continue,
-#checkout #checkout-footer .buttons #checkout-btn-next [class*="icon-"] { display: none !important; }
+/* Botón "atrás" (aparece en los pasos de calendario/hora): iba blanco sobre blanco
+   = invisible. Le damos estilo SECUNDARIO visible (fondo blanco, borde y texto oscuros),
+   dejando "Siguiente" como principal (oscuro relleno). */
+#checkout #checkout-footer .buttons #checkout-btn-prev {
+  background-color: #FFFFFF !important;
+  border: 1px solid #1D1D1B !important;
+}
+#checkout #checkout-footer .buttons #checkout-btn-prev,
+#checkout #checkout-footer .buttons #checkout-btn-prev span { color: #1D1D1B !important; }
+#checkout #checkout-footer .buttons #checkout-btn-prev:hover { background-color: #F2F2F2 !important; }
+
+/* Quitar los iconos (flechas) dentro de AMBOS botones del pie, para un look limpio */
+#checkout #checkout-footer .buttons #checkout-btn-next [class*="icon-"],
+#checkout #checkout-footer .buttons #checkout-btn-prev [class*="icon-"] { display: none !important; }
+
+/* ===== CALENDARIO / SELECTOR DE HORA — formato de marca ===== */
+/* Selector de idioma/moneda y fechas con tipografía de marca */
+#checkout #checkout-header .locale,
+#checkout #checkout-times,
+#checkout #times-header .title-value,
+#checkout #times-header .wday-label,
+#checkout #times-body .option { font-family: 'Inter', system-ui, sans-serif !important; }
+
+/* Flechas de navegación del calendario -> azul de marca (mejor contraste que el gris) */
+#checkout #times-header .btn-action { color: #1470AF !important; }
+
+/* Día seleccionado / disponible: el círculo verde de disponibilidad se mantiene,
+   pero el acento (celeste por defecto) pasa a azul de marca donde aplique */
+#checkout .accent-color,
+#checkout #times-body .option .icon-continue { color: #1470AF !important; }
