@@ -72,9 +72,11 @@
   border-color: #1470AF !important;
 }
 
-/* NOTA: "Recordar mi usuario" solo persiste si el portal se abre como página de
-   PRIMERA PARTE (enlace directo al widget), no dentro del iframe embebido (las
-   cookies de terceros quedan bloqueadas). Ver guía. La casilla queda visible. */
+/* "Recordar mi usuario": bug del backend de TicketingHub — al marcarla el login
+   FALLA (falla embebido y también en primera parte, así que no es cookies de terceros).
+   Se OCULTA de forma provisional para que el login sea confiable; reversible cuando
+   TicketingHub corrija el endpoint de login del portal de reseller. */
+#checkout #checkout-login .checkbox { display: none !important; }
 
 /* ===== PIE Y BOTÓN — a prueba de desbordes, con padding igual en los 4 lados ===== */
 #checkout #checkout-footer {
