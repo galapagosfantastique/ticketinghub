@@ -59,6 +59,19 @@
 /* Iconos y acentos -> azul de marca */
 #checkout .accent-color { color: #1470AF !important; }
 
+/* Checkbox "Recordar mi usuario": el check salía celeste (default de TicketingHub).
+   Lo pasamos al AZUL de marca. */
+#checkout input[type="checkbox"],
+#checkout .checkbox .checkbox-input input,
+#checkout .checkbox-input input[type="checkbox"] {
+  accent-color: #1470AF !important;
+}
+#checkout .checkbox .checkbox-input input:checked,
+#checkout .checkbox-input input[type="checkbox"]:checked {
+  background-color: #1470AF !important;
+  border-color: #1470AF !important;
+}
+
 /* ===== PIE Y BOTÓN — a prueba de desbordes, con padding igual en los 4 lados ===== */
 #checkout #checkout-footer {
   padding: 16px !important;      /* mismo aire arriba/abajo que a los lados */
@@ -110,3 +123,7 @@
 #checkout #checkout-footer .buttons #checkout-btn-next,
 #checkout #checkout-footer .buttons #checkout-btn-next span { color: #FFFFFF !important; }
 #checkout #checkout-footer .buttons #checkout-btn-next:hover { filter: brightness(1.25); }
+
+/* Quitar el icono (flecha ">") que va al lado del texto "INICIAR SESIÓN" */
+#checkout #checkout-footer .buttons #checkout-btn-next .icon-continue,
+#checkout #checkout-footer .buttons #checkout-btn-next [class*="icon-"] { display: none !important; }
