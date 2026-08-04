@@ -145,18 +145,83 @@
 #checkout #checkout-footer .buttons #checkout-btn-next [class*="icon-"],
 #checkout #checkout-footer .buttons #checkout-btn-prev [class*="icon-"] { display: none !important; }
 
-/* ===== CALENDARIO / SELECTOR DE HORA — formato de marca ===== */
-/* Selector de idioma/moneda y fechas con tipografía de marca */
+/* ===== CALENDARIO / SELECTOR DE HORA — "look moderno" (imitar el widget de Tours) =====
+   El portal usa el embed legacy; aquí se rediseña para parecerse al widget moderno:
+   sin círculos verdes, día seleccionado en AZUL de marca, días de semana en MAYÚSCULAS,
+   horarios como cajas seleccionables y acentos azules. */
+
+/* Tipografía de marca en todo el calendario */
 #checkout #checkout-header .locale,
 #checkout #checkout-times,
 #checkout #times-header .title-value,
 #checkout #times-header .wday-label,
 #checkout #times-body .option { font-family: 'Inter', system-ui, sans-serif !important; }
 
-/* Flechas de navegación del calendario -> azul de marca (mejor contraste que el gris) */
+/* Título del mes / semana: en negrita y oscuro */
+#checkout #times-header .title-value {
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  color: #1D1D1B !important;
+}
+
+/* Flechas de navegación del calendario -> azul de marca */
 #checkout #times-header .btn-action { color: #1470AF !important; }
 
-/* Día seleccionado / disponible: el círculo verde de disponibilidad se mantiene,
-   pero el acento (celeste por defecto) pasa a azul de marca donde aplique */
+/* Cabeceras de días (lun., mar., ...) -> MAYÚSCULAS grises, como el widget moderno */
+#checkout #times-header .wday-label {
+  text-transform: uppercase !important;
+  color: #6B7280 !important;
+  font-size: .72rem !important;
+  letter-spacing: .04em !important;
+  font-weight: 600 !important;
+}
+
+/* Días: quitar el CÍRCULO VERDE de disponibilidad -> número plano (como el moderno) */
+#checkout #times-header .day span {
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: #1D1D1B !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: 1.6 !important;
+  box-shadow: none !important;
+}
+
+/* Día NO disponible -> gris claro (atenuado, como el moderno) */
+#checkout #times-header .day:not(.available) span { color: #C4C4C4 !important; }
+
+/* Día seleccionado/actual -> AZUL de marca relleno con texto blanco (cuadrado de marca) */
+#checkout #times-header .day.current span,
+#checkout #times-header .day.selected span {
+  background-color: #1470AF !important;
+  color: #FFFFFF !important;
+  border-radius: 0 !important;
+  padding: 2px 0 !important;
+  display: inline-block !important;
+  min-width: 1.9em !important;
+}
+
+/* Hover de días disponibles -> borde azul sutil */
+#checkout #times-header .day.available:hover span {
+  box-shadow: inset 0 0 0 1px #1470AF !important;
+  color: #1470AF !important;
+}
+
+/* Selector de HORA: cajas seleccionables tipo widget moderno (borde + hover azul) */
+#checkout #times-body .option {
+  border: 1px solid #D1D5DB !important;
+  padding: 10px 14px !important;
+  margin: 0 0 8px 0 !important;
+  transition: border-color .15s ease !important;
+}
+#checkout #times-body .option:hover { border-color: #1470AF !important; }
+#checkout #times-body .option .hour {
+  font-family: 'Inconsolata', monospace !important;
+  font-weight: 600 !important;
+  color: #1D1D1B !important;
+}
+
+/* Acentos azules de marca */
 #checkout .accent-color,
 #checkout #times-body .option .icon-continue { color: #1470AF !important; }
